@@ -1,10 +1,10 @@
 import './App.css';
 import ContactForm from './components/ContactForm/ContactForm';
-// import SearchBox from './components/SearchBox/SearchBox'
+import SearchBox from './components/SearchBox/SearchBox'
 import ContactList from './components/ContactList/ContactList'
 import Contact from './components/Contact/Contact'
 // import { Formik, Field, Form } from "formik";
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
 import { nanoid } from 'nanoid'; 
 
 function App() {
@@ -27,9 +27,9 @@ function App() {
     });
   };
 
-  //  const handleFilterChange = (filterValue) => {
-  //   setFilter(filterValue);
-  // };
+   const handleFilterChange = (filterValue) => {
+    setFilter(filterValue);
+  };
 
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
@@ -40,7 +40,7 @@ function App() {
 <div>
   <h1>Phonebook</h1>
   <ContactForm onAddContact={addContact}/>
-  {/* <SearchBox filter={filter} onFilterChange={handleFilterChange} /> */}
+  < SearchBox filter={filter} onFilterChange={handleFilterChange} />
   <ContactList contacts={filteredContacts} onDeleteContact={deleteContact} />
 </div>
 
