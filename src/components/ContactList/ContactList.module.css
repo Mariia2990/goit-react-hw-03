@@ -1,0 +1,9 @@
+.listContact{
+    display: grid;
+    list-style: none;
+    align-items: flex-start;
+    padding-left: 0;
+    gap:20px;
+    position:relative;
+    content:'';
+}

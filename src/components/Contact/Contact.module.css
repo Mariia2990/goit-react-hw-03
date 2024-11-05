@@ -1,0 +1,32 @@
+.itemContact{
+width: 408px;
+border: 1px solid #1a1a1a;
+display: flex;
+gap: 10px;
+border-radius: 4px;
+}
+
+.buttonDelete{
+display: flex;
+width: 100px;
+height: 40px;
+align-items: center;
+justify-content: center;
+margin-left: auto;
+margin-top: 12px;
+}
+
+.nameContact{
+margin-top:20px;
+margin-bottom:20px;
+
+}
+
+.iconPeople{
+margin-top: 24px;
+}
+
+.iconPhone{
+margin-top: 24px;
+
+}
