@@ -8,6 +8,11 @@
     margin: 10px 0 0;
     border-radius: 8px;
     background-color: aquamarine;
+    transition: transform 0.3s ease;
+}
+
+.itemContact:hover{
+    transform: scale(1.05);
 }
 
 .buttonDelete{
@@ -21,6 +26,7 @@ margin-top: 12px;
 border-radius: 8px;
 background-color: orangered;
 color: #fff;
+border:none;
 }
 
 .buttonDelete:hover{
