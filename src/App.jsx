@@ -29,20 +29,10 @@ function App() {
       alert(`Contact with the number "${newContact.number}" already exists.`);
       return;
     }
-    
+
     setContacts((prevContacts) => [...prevContacts, { ...newContact, id: nanoid() }]);
   };
 
- useEffect(() => {
-    const savedContacts = localStorage.getItem('contacts');
-    if (savedContacts) {
-      setContacts(JSON.parse(savedContacts));
-    }
- }, []);
-  
-   useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
 
   const deleteContact = (contactId) => {
     setContacts((prevContact) => {
@@ -50,7 +40,11 @@ function App() {
     });
   };
 
-   const handleFilterChange = (filterValue) => {
+    useEffect(() => {
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
+
+  const handleFilterChange = (filterValue) => {
     setFilter(filterValue);
   };
 
