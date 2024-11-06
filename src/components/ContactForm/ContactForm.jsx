@@ -15,15 +15,15 @@ export default function ContactForm({ onAddContact }) {
 
   const validationSchema = Yup.object({
     name: Yup.string()
-    .min(2, "Too Short!")
+    .min(3, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
   number: Yup.string()
-    .matches(
-      /^\d{7,15}$/,
-      'Number must contain only digits and be between 7 and 15 characters'
-    )
-    .required('Number is required'),
+  .matches(
+    /^(\d{2,4}-?)+\d{2,4}$/,
+    'Number must be between 6 and 15 digits and can include hyphens, e.g., 123-456-7890'
+  )
+  .required('Number is required'),
 });
 
   const handleSubmit = (values, { resetForm }) => {
