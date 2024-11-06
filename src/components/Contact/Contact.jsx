@@ -6,9 +6,8 @@ function Contact({ name, number, onDeleteContact }) {
   return (
     <li className={css.itemContact}>
       <div className={css.contactInfo}>
-         
       <p className = {css.nameContact}><IoMdPerson className={css.iconPeople}/>{name}</p>
-        <p className={css.nameContact}><BsFillTelephoneFill className={css.iconPhone} />{number}</p>
+        <p className={css.numberContact}><BsFillTelephoneFill className={css.iconPhone} />{number}</p>
         </div>
       <button className={css.buttonDelete} onClick={onDeleteContact}>Delete</button>
     </li>

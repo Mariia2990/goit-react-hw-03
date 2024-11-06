@@ -4,7 +4,7 @@ import SearchBox from './components/SearchBox/SearchBox'
 import ContactList from './components/ContactList/ContactList'
 import Contact from './components/Contact/Contact'
 // import { Formik, Field, Form } from "formik";
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import { nanoid } from 'nanoid'; 
 
 function App() {
@@ -20,6 +20,17 @@ function App() {
   const addContact = (newContact) => {
     setContacts((prevContacts) => [...prevContacts, { ...newContact, id: nanoid() }]);
   };
+
+ useEffect(() => {
+    const savedContacts = localStorage.getItem('contacts');
+    if (savedContacts) {
+      setContacts(JSON.parse(savedContacts));
+    }
+ }, []);
+  
+   useEffect(() => {
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
 
   const deleteContact = (contactId) => {
     setContacts((prevContact) => {
