@@ -3,7 +3,6 @@ import ContactForm from './components/ContactForm/ContactForm';
 import SearchBox from './components/SearchBox/SearchBox'
 import ContactList from './components/ContactList/ContactList'
 import Contact from './components/Contact/Contact'
-// import { Formik, Field, Form } from "formik";
 import { useState, useEffect} from 'react';
 import { nanoid } from 'nanoid'; 
 
@@ -18,6 +17,19 @@ function App() {
   const [filter, setFilter] = useState('');
 
   const addContact = (newContact) => {
+    const isDuplicateName = contacts.some(contact => contact.name.toLowerCase() === newContact.name.toLowerCase());
+    const isDuplicateNumber = contacts.some(contact => contact.number === newContact.number);
+
+    if (isDuplicateName) {
+      alert(`Contact with the name "${newContact.name}" already exists.`);
+      return;
+    }
+
+    if (isDuplicateNumber) {
+      alert(`Contact with the number "${newContact.number}" already exists.`);
+      return;
+    }
+    
     setContacts((prevContacts) => [...prevContacts, { ...newContact, id: nanoid() }]);
   };
 
