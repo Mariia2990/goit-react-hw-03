@@ -5,11 +5,13 @@ width: 408px;
 height: 35px;
 margin-top: 20px;
 margin-bottom: 20px;
+border-radius: 8px;
 }
 
 .labelFilter{
 text-align: left;
-color: black;
+color: #fff;
+font-size: 18px;
 }
 
 .inputFilter{

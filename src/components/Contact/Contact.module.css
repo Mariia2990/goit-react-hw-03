@@ -6,8 +6,8 @@
     padding: 10px;
     gap: 10px;
     margin: 10px 0 0;
-    border: 1px solid #1a1a1a;
-    border-radius: 4px;
+    border-radius: 8px;
+    background-color: aquamarine;
 }
 
 .buttonDelete{
@@ -18,13 +18,23 @@ align-items: center;
 justify-content: center;
 margin-left: auto;
 margin-top: 12px;
+border-radius: 8px;
+background-color: orangered;
+color: #fff;
 }
 
+.buttonDelete:hover{
+background-color: orange;
+}
 .nameContact,
 .numberContact{
 margin:0;
 display: flex;
 align-items: center;
+}
+
+.nameContact{
+    font-weight: bold;
 }
 
 .iconPeople,
