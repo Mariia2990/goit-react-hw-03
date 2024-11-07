@@ -25,14 +25,12 @@ function App() {
     const isDuplicateNumber = contacts.some(contact => contact.number === newContact.number);
 
     if (isDuplicateName) {
-      alert(`Contact with the name "${newContact.name}" already exists.`);
-      return;
+      return alert(`Contact with the name "${newContact.name}" already exists.`);
     }
 
     if (isDuplicateNumber) {
-      alert(`Contact with the number "${newContact.number}" already exists.`);
-      return;
-    }
+       return alert(`Contact with the number "${newContact.number}" already exists.`);
+     }
 
     setContacts((prevContacts) => [...prevContacts, { ...newContact, id: nanoid() }]);
   };
